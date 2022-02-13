@@ -10,6 +10,9 @@ namespace SnakeAndLadder
     {
         static void Main(string[] args)
         {
+            Random random = new Random();
+            int position=random.Next(1,7);
+            Console.WriteLine("position of dice is " + position);
         }
     }
 }
