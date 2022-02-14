@@ -23,7 +23,7 @@ namespace SnakeAndLadder
                 {
                     case LADDER:
                         position += DiceNo;
-                        position = Math.Max(position, 100);
+                        position = Math.Min(position, 100);
                         break;
                     case NOPLAY:
                         break;
