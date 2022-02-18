@@ -10,6 +10,7 @@ namespace SnakeAndLadder
     {
         static void Main(string[] args)
         {
+            int position =0;
         }
     }
 }
