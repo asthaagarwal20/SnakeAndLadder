@@ -1,4 +1,4 @@
-﻿using System;
+ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,7 @@ namespace SnakeAndLadder
 {
     internal class Program
     {
-         public static int NewPosition(int options,int DiceNo,int position)
+         public static int GetPosition(int options,int DiceNo,int position)
         {
             const int LADDER = 1;
             const int NOPLAY = 2;
@@ -16,8 +16,9 @@ namespace SnakeAndLadder
             switch (options)
             {
                 case LADDER:
+                    if (position + DiceNo > 100)
+                        break;
                     position += DiceNo;
-                    position = Math.Min(position, 100);
                     break;
                 case NOPLAY:
                     break;
@@ -40,22 +41,22 @@ namespace SnakeAndLadder
                 int options = random.Next(1, 4);
                 if (turn == 0)
                 {
-                    FirstPlayerposition = NewPosition(options, DiceNo, FirstPlayerposition);
+                    FirstPlayerposition = GetPosition(options, DiceNo, FirstPlayerposition);
                     turn = 1;
                     if (options == 1)
                     {
                         DiceNo = random.Next(1, 7);
-                        FirstPlayerposition = NewPosition(options, DiceNo, FirstPlayerposition);
+                        FirstPlayerposition = GetPosition(options, DiceNo, FirstPlayerposition);
                     }
                 }
                 else
                 {
-                    SecondPlayerPosition = NewPosition(options, DiceNo, SecondPlayerPosition);
+                    SecondPlayerPosition = GetPosition(options, DiceNo, SecondPlayerPosition);
                     turn = 0;
                          if (options == 1)
                     {
                         DiceNo = random.Next(1, 7);
-                        SecondPlayerPosition = NewPosition(options, DiceNo, SecondPlayerPosition);
+                        SecondPlayerPosition = GetPosition(options, DiceNo, SecondPlayerPosition);
                     }
 
                 }
