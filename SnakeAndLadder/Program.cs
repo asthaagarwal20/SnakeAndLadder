@@ -22,8 +22,9 @@ namespace SnakeAndLadder
                 switch (options)
                 {
                     case LADDER:
+                        if (position + DiceNo > 100)
+                        break;
                         position += DiceNo;
-                        position = Math.Min(position,100);
                         break;
                     case NOPLAY:
                         break;
